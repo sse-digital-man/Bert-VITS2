@@ -730,8 +730,9 @@ if __name__ == "__main__":
 
     logger.warning("本地服务，请勿将服务端口暴露于外网")
     logger.info(f"api文档地址 http://127.0.0.1:{config.server_config.port}/docs")
-    if os.path.isdir(StaticDir):
-        webbrowser.open(f"http://127.0.0.1:{config.server_config.port}")
+    # 不自动打开网页
+    # if os.path.isdir(StaticDir):
+    #     webbrowser.open(f"http://127.0.0.1:{config.server_config.port}")
     uvicorn.run(
         app, port=config.server_config.port, host="0.0.0.0", log_level="warning"
     )
