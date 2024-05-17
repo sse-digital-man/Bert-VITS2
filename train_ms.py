@@ -79,6 +79,8 @@ def run():
     rank = dist.get_rank()
     local_rank = int(os.environ["LOCAL_RANK"])
     n_gpus = dist.get_world_size()
+    print(f"config.dataset_path: {config.dataset_path}")
+    print(f"config.train_ms_config.config_path: {config.train_ms_config.config_path}")
 
     # 命令行/config.yml配置解析
     # hps = utils.get_hparams()
@@ -99,7 +101,11 @@ def run():
         help="数据集文件夹路径，请注意，数据不再默认放在/logs文件夹下。如果需要用命令行配置，请声明相对于根目录的路径",
         default=config.dataset_path,
     )
-    args = parser.parse_known_args()
+    args, unknown = parser.parse_known_args()
+    # print(f"unknown: {unknown}")
+    # print(f"args: {args}")
+    print(f"arsgs.model: {args.model}")
+    print(f"args.config: {args.config}")
     model_dir = os.path.join(args.model, config.train_ms_config.model)
     if not os.path.exists(model_dir):
         os.makedirs(model_dir, exist_ok=True)
