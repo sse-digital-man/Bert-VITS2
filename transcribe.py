@@ -1,6 +1,7 @@
 import os
 import argparse
 
+
 def generate_esd_list(in_dir, out_file):
     entries = []
     print(f"in_dir: {in_dir}")
@@ -22,12 +23,16 @@ def generate_esd_list(in_dir, out_file):
     with open(out_file, "w", encoding="utf-8") as f:
         f.write("\n".join(entries))
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--in_dir", type=str, required=True, help="Path to the input directory")
-    parser.add_argument("--out_file", type=str, required=True, help="Path to the output esd.list file")
+    parser.add_argument(
+        "--in_dir", type=str, required=True, help="Path to the input directory"
+    )
+    parser.add_argument(
+        "--out_file", type=str, required=True, help="Path to the output esd.list file"
+    )
     args = parser.parse_args()
 
     generate_esd_list(args.in_dir, args.out_file)
     print(f"esd.list file has been generated at {args.out_file}")
-
