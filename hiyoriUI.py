@@ -90,6 +90,8 @@ class Models:
         :param device: 模型推理使用设备
         :param language: 模型推理默认语言
         """
+        print(f"config path {config_path}")
+        print(f"model path {model_path}")
         # 若文件不存在则不进行加载
         if not os.path.isfile(model_path):
             if model_path != "":
