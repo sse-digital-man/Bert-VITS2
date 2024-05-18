@@ -168,6 +168,7 @@ filelists/*
 data/*
 /*.yml
 !/default_config.yml
+!/config.yml
 /emotional/*/*.bin
 /slm/*/*.bin
 /bert/*/*.bin
