@@ -15,3 +15,10 @@
 # 运行
 WebUI:`python webui.py`
 WebAPI: `python hiyoriUI.py`
+
+# 训练
+1. `python webui_preprocess.py`查看训练指南,根据训练指南来生成训练数据即可
+- 对于[AI-Hobbyist/Genshin_Datasets: Genshin Datasets For SVC/SVS/TTS](https://github.com/AI-Hobbyist/Genshin_Datasets)的数据集，可以使用`transcribe.py`得到esd.list文件
+
+2. 正式训练：`python train_ms.py`
+- 需要修改config.yml文件
