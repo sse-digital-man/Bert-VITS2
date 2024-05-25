@@ -25,5 +25,5 @@ WebAPI: `python hiyoriUI.py`
 
 # Docker
 pull image: `docker pull kingkia/bert-vits2-api`
-run: `docker run -it --rm --gpus=all --shm-size="16G" --name bert-vits2-container -v D:\SIP\BV2\Data:/workspace/Data -v D:\SIP\BV2\bert:/workspace/bert -p 5000:5000 bert-vits2-api  /bin/bash`
+run: `docker run -it --gpus=all --shm-size="16G" --name bv2-api-container -v D:\SIP\BV2\Data:/workspace/Data -v D:\SIP\BV2\bert:/workspace/bert -p 5000:5000 kingkia/bert-vits2-api  /bin/bash`
 > 根据需要修改volume路径，必须写的包括Data、bert两个文件夹
