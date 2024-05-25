@@ -22,3 +22,8 @@ WebAPI: `python hiyoriUI.py`
 
 2. 正式训练：`python train_ms.py`
 - 需要修改config.yml文件
+
+# Docker
+pull image: `docker pull kingkia/bert-vits2-api`
+run: `docker run -it --rm --gpus=all --shm-size="16G" --name bert-vits2-container -v D:\SIP\BV2\Data:/workspace/Data -v D:\SIP\BV2\bert:/workspace/bert -p 5000:5000 bert-vits2-api  /bin/bash`
+> 根据需要修改volume路径，必须写的包括Data、bert两个文件夹
